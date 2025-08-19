@@ -1,0 +1,1 @@
+export { ButtonPlay } from './ui';

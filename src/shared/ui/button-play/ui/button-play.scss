@@ -1,0 +1,24 @@
+@use '~/src/assets/styles/lib/index.scss' as *;
+
+$parent: 'button-play';
+
+@include block($parent) {
+  --button-play-size: #{rem(54)};
+
+  position: relative;
+  width: var(--button-play-size);
+  min-width: var(--button-play-size);
+  height: var(--button-play-size);
+  background-color: var(--color-green-200);
+  border-radius: 50%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    border: rem(5) solid transparent;
+    border-left: rem(9) solid var(--color-beige-100);
+    transform: translate(-50%, -50%);
+  }
+}

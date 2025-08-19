@@ -1,0 +1,9 @@
+@use '~/src/assets/styles/lib/index.scss' as *;
+
+$parent: "player-youtube";
+
+@include block($parent) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
