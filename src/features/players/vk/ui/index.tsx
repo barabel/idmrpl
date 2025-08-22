@@ -1,9 +1,10 @@
-import type { TPlayerBase } from '@/shared/types';
+import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useEffect, useImperativeHandle, useRef } from 'react';
 import { convertVkVideoLink, loadVKVideoApi } from '../lib';
 import { usePlayerDispatch } from '@/shared/context';
 
 export const PlayerVk: FCClass<TPlayerBase> = ({
+  className,
   ref,
   url,
 }) => {
@@ -48,6 +49,7 @@ export const PlayerVk: FCClass<TPlayerBase> = ({
 
   return (
     <iframe
+      className={className}
       width='100%'
       height='100%'
       ref={iframeRef}

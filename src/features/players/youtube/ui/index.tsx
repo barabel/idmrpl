@@ -1,15 +1,10 @@
-import type { TPlayerBase } from '@/shared/types'
+import type { FCClass, TPlayerBase } from '@/shared/types'
 import { useEffect, useImperativeHandle, useRef } from 'react';
 import { loadYTApi, parseYtId } from '../lib';
 import { usePlayerDispatch } from '@/shared/context';
-import "./player-youtube.scss";
-
-const parentClass = "player-youtube" as const;
-const classes = {
-  parent: parentClass
-} as const;
 
 export const PlayerYoutube: FCClass<TPlayerBase> = ({
+  className,
   ref,
   url,
 }) => {
@@ -57,5 +52,5 @@ export const PlayerYoutube: FCClass<TPlayerBase> = ({
     });
   }, []);
 
-  return <div className={classes.parent} ref={refContainer} />
+  return <div className={className} ref={refContainer} />
 }

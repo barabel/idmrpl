@@ -1,11 +1,12 @@
 import cx from 'classix';
 import './button-play.scss';
+import type { FCClass } from '@/shared/types';
 
 type TButtonPlay = {
   onClick?: () => void
 }
 
-const parentClass = "button-play" as const;
+const parentClass = "idmrp-button-play" as const;
 const classes = {
   parent: parentClass
 } as const;

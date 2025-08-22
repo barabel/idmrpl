@@ -1,13 +1,6 @@
 import { PLAYER_ACTIONS, usePlayerDispatch } from '@/shared/context';
-import type { TPlayerBase } from '@/shared/types';
-import cx from 'classix';
-import './player-video.scss';
+import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useImperativeHandle, useRef } from 'react';
-
-const parentClass = 'player-video' as const;
-const classes = {
-  parent: parentClass,
-} as const;
 
 export const PlayerVideo: FCClass<TPlayerBase> = ({
   className,
@@ -52,7 +45,7 @@ export const PlayerVideo: FCClass<TPlayerBase> = ({
 
   return (
     <video
-      className={cx(classes.parent, className)}
+      className={className}
       ref={videoRef}
       controls
       src={url}
