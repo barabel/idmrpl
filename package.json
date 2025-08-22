@@ -1,6 +1,6 @@
 {
   "name": "@barabel324/react-player",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/react-player.js",
   "exports": {
