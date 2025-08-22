@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "type": "module",
   "main": "./dist/react-player.js",
+  "types": "./dist/react-player.d.ts",
   "exports": {
     ".": {
       "import": "./dist/react-player.js"
