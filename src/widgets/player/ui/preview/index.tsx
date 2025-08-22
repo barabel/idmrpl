@@ -1,4 +1,3 @@
-import cx from 'classix';
 import { PLAYER_ACTIONS, usePlayerDispatch, usePlayerState } from '@/shared/context';
 import { ButtonPlay } from '@/shared/ui/button-play';
 import type { FCClass, TPlayerPreview } from '@/shared/types';
@@ -35,7 +34,7 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
   }
 
   return (
-    <div className={cx(classes.parent, className)}>
+    <div className={[classes.parent, className].join(' ')}>
       {(showButton || (preview && showPreview)) && (
         <div
           className={classes.wrapper}
