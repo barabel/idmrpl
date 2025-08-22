@@ -4,7 +4,7 @@ import { ButtonPlay } from '@/shared/ui/button-play';
 import type { FCClass, TPlayerPreview } from '@/shared/types';
 import "./player-preview.scss";
 
-const parentClass = 'player-preview' as const;
+const parentClass = 'idmrp-player-preview' as const;
 const classes = {
   parent: parentClass,
   wrapper: `${parentClass}__wrapper`,

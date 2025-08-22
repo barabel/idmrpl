@@ -1,15 +1,17 @@
 @use '~/src/assets/styles/lib/index.scss' as *;
 
-$parent: 'button-play';
+$parent: 'idmrp-button-play';
 
 @include block($parent) {
-  --button-play-size: #{rem(54)};
+  --idmrp-button-play-size: #{rem(54)};
+  --idmrp-button-play-bg: #2D3C31;
+  --idmrp-button-play-triangle-color: #E3DFD7;
 
   position: relative;
-  width: var(--button-play-size);
-  min-width: var(--button-play-size);
-  height: var(--button-play-size);
-  background-color: var(--color-green-200);
+  width: var(--idmrp-button-play-size);
+  min-width: var(--idmrp-button-play-size);
+  height: var(--idmrp-button-play-size);
+  background-color: var(--idmrp-button-play-bg);
   border-radius: 50%;
 
   &::before {
@@ -18,7 +20,7 @@ $parent: 'button-play';
     top: 50%;
     left: 58%;
     border: rem(5) solid transparent;
-    border-left: rem(9) solid var(--color-beige-100);
+    border-left: rem(9) solid var(--idmrp-button-play-triangle-color);
     transform: translate(-50%, -50%);
   }
 }

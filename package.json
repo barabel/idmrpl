@@ -1,6 +1,5 @@
 {
-  "name": "vite-project",
-  "private": true,
+  "name": "@barabel324/react-player",
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/react-player.js",
@@ -20,7 +19,6 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "classix": "^2.2.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

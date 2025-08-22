@@ -21,13 +21,21 @@ const App = () => {
         {randomUrl}
       </div>
 
-      <Player
-        preview={{
-          src: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRicvXHENnmfMs08gwqqleKpIFIDyYXvABiotI69IImEyfxZBXVIos5QqecafJKRFV5a76EttukpAtA0O6-y9ujsgrgpwb0TbLedjYNo38",
-          alt: 'preview',
+      <div
+        style={{
+          margin: 50,
+          width: 300,
+          height: 300,
         }}
-        url={randomUrl}
-      />
+      >
+        <Player
+          preview={{
+            src: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRicvXHENnmfMs08gwqqleKpIFIDyYXvABiotI69IImEyfxZBXVIos5QqecafJKRFV5a76EttukpAtA0O6-y9ujsgrgpwb0TbLedjYNo38",
+            alt: 'preview',
+          }}
+          url={randomUrl}
+        />
+      </div>
     </div>
   )
 }

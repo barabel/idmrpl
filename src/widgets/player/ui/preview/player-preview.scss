@@ -1,6 +1,6 @@
 @use '~/src/assets/styles/lib/index.scss' as *;
 
-$parent: 'player-preview';
+$parent: 'idmrp-player-preview';
 
 @include block($parent) {
   position: relative;

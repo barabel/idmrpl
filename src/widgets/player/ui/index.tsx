@@ -5,9 +5,10 @@ import { PlayerPreview } from './preview'
 import { getVideoTypeByURL, players } from '../lib';
 import './player.scss';
 
-const parentClass = 'player' as const;
+const parentClass = 'idmrp-player' as const;
 const classes = {
   parent: parentClass,
+  player: `${parentClass}__player`,
 } as const;
 
 const PlayerBody: FCClass<TPlayer> = ({
@@ -35,6 +36,7 @@ const PlayerBody: FCClass<TPlayer> = ({
       onPlay={handleOnPlay}
     >
       <Player
+        className={classes.player}
         ref={playerRef}
         url={url}
       />

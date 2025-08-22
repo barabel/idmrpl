@@ -1,14 +1,9 @@
 import { usePlayerDispatch } from '@/shared/context';
 import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useEffect, useImperativeHandle, useRef } from 'react';
-import "./player-rutube.scss";
-
-const parentClass = 'player-rutube' as const;
-const classes = {
-  parent: parentClass
-} as const;
 
 export const PlayerRutube: FCClass<TPlayerBase> = ({
+  className,
   ref,
   url,
 }) => {
@@ -48,13 +43,13 @@ export const PlayerRutube: FCClass<TPlayerBase> = ({
 
   return (
     <iframe
+      className={className}
       ref={refIframe}
       width="100%"
       height="100%"
       src={url}
       allowFullScreen
       frameBorder="0"
-      className={classes.parent}
     ></iframe>
   )
 }
