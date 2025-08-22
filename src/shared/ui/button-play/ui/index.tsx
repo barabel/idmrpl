@@ -1,6 +1,5 @@
-import cx from 'classix';
-import './button-play.scss';
 import type { FCClass } from '@/shared/types';
+import './button-play.scss';
 
 type TButtonPlay = {
   onClick?: () => void
@@ -17,7 +16,7 @@ export const ButtonPlay: FCClass<TButtonPlay> = ({
 }) => {
   return (
     <button
-      className={cx(classes.parent, className)}
+      className={[classes.parent, className].join(' ')}
       type='button'
       onClick={onClick}
     />
