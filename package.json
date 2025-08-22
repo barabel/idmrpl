@@ -12,6 +12,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barabel/idmrpl.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
