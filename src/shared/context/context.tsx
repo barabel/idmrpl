@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, type ActionDispatch } from 'react';
 import { PLAYER_ACTIONS, type TPlayerAction, type TPlayerState } from './types';
+import type { FCClass } from '../types';
 
 const initialState = {
   showButton: false,

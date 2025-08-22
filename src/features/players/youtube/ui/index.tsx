@@ -1,4 +1,4 @@
-import type { TPlayerBase } from '@/shared/types'
+import type { FCClass, TPlayerBase } from '@/shared/types'
 import { useEffect, useImperativeHandle, useRef } from 'react';
 import { loadYTApi, parseYtId } from '../lib';
 import { usePlayerDispatch } from '@/shared/context';

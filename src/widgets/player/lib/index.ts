@@ -1,6 +1,6 @@
 import { lazy, type LazyExoticComponent } from 'react';
 import { VideoTypes, type TVideoTypes } from '../types';
-import type { TPlayerBase } from '@/shared/types';
+import type { FCClass, TPlayerBase } from '@/shared/types';
 
 export const players: Record<TVideoTypes, LazyExoticComponent<FCClass<TPlayerBase>>> = {
   [VideoTypes.youtube]: lazy(async() => await import('@/features/players/youtube')),

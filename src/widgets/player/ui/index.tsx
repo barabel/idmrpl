@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { PlayerProvider } from '@/shared/context'
-import type { TPlayer, TPlayerBaseMethods } from '@/shared/types'
+import type { FCClass, TPlayer, TPlayerBaseMethods } from '@/shared/types'
 import { PlayerPreview } from './preview'
 import { getVideoTypeByURL, players } from '../lib';
 import './player.scss';

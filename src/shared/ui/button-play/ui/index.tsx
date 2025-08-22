@@ -1,5 +1,6 @@
 import cx from 'classix';
 import './button-play.scss';
+import type { FCClass } from '@/shared/types';
 
 type TButtonPlay = {
   onClick?: () => void

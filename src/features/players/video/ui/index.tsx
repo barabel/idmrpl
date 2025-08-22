@@ -1,5 +1,5 @@
 import { PLAYER_ACTIONS, usePlayerDispatch } from '@/shared/context';
-import type { TPlayerBase } from '@/shared/types';
+import type { FCClass, TPlayerBase } from '@/shared/types';
 import cx from 'classix';
 import './player-video.scss';
 import { useImperativeHandle, useRef } from 'react';

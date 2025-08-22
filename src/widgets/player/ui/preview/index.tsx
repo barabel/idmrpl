@@ -1,7 +1,7 @@
 import cx from 'classix';
 import { PLAYER_ACTIONS, usePlayerDispatch, usePlayerState } from '@/shared/context';
 import { ButtonPlay } from '@/shared/ui/button-play';
-import type { TPlayerPreview } from '@/shared/types';
+import type { FCClass, TPlayerPreview } from '@/shared/types';
 import "./player-preview.scss";
 
 const parentClass = 'player-preview' as const;

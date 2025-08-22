@@ -1,5 +1,5 @@
 import { usePlayerDispatch } from '@/shared/context';
-import type { TPlayerBase } from '@/shared/types';
+import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useEffect, useImperativeHandle, useRef } from 'react';
 import "./player-rutube.scss";
 
