@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 interface Window {
-  YT?: any
+  YT?: any;
   VK?: any;
-  onYouTubeIframeAPIReady?: () => void
+  onYouTubeIframeAPIReady?: () => void;
 }

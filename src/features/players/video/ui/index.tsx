@@ -13,34 +13,36 @@ export const PlayerVideo: FCClass<TPlayerBase> = ({
 
   const handlePlay = () => {
     dispatch({
-      type: PLAYER_ACTIONS.hideButton
+      type: PLAYER_ACTIONS.hideButton,
     });
-  }
+  };
 
   const handlePause = () => {
     dispatch({
-      type: PLAYER_ACTIONS.showButton
+      type: PLAYER_ACTIONS.showButton,
     });
-  }
+  };
 
   const handleCanPlay = () => {
     dispatch({
-      type: PLAYER_ACTIONS.canplay
+      type: PLAYER_ACTIONS.canplay,
     });
-  }
+  };
 
   const play = (): void => {
     if (videoRef.current) {
       handlePlay();
 
-      videoRef.current.play().catch((error) => { console.error(error) });
+      videoRef.current.play().catch((error) => {
+        console.error(error);
+      });
     }
-  }
+  };
 
   useImperativeHandle(ref, () => {
     return {
       play,
-    }
+    };
   });
 
   return (
@@ -54,5 +56,5 @@ export const PlayerVideo: FCClass<TPlayerBase> = ({
       onPause={handlePause}
       onCanPlay={handleCanPlay}
     />
-  )
-}
+  );
+};

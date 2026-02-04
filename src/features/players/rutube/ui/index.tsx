@@ -18,12 +18,12 @@ export const PlayerRutube: FCClass<TPlayerBase> = ({
       type: 'player:play',
       data: {},
     }), '*');
-  }
+  };
 
   useImperativeHandle(ref, () => {
     return {
       play,
-    }
+    };
   });
 
   useEffect(() => {
@@ -38,8 +38,10 @@ export const PlayerRutube: FCClass<TPlayerBase> = ({
 
     window.addEventListener('message', rutubeReady);
 
-    return () => { window.removeEventListener('message', rutubeReady) }
-  }, []);
+    return () => {
+      window.removeEventListener('message', rutubeReady);
+    };
+  }, [dispatch]);
 
   return (
     <iframe
@@ -50,6 +52,7 @@ export const PlayerRutube: FCClass<TPlayerBase> = ({
       src={url}
       allowFullScreen
       frameBorder="0"
-    ></iframe>
-  )
-}
+    >
+    </iframe>
+  );
+};

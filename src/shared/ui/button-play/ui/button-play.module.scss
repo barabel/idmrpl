@@ -1,8 +1,6 @@
 @use '~/src/assets/styles/lib/index.scss' as *;
 
-$parent: 'idmrp-button-play';
-
-@include block($parent) {
+.button {
   --idmrp-button-play-size: #{rem(54)};
   --idmrp-button-play-bg: #2D3C31;
   --idmrp-button-play-triangle-color: #E3DFD7;

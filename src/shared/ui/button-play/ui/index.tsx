@@ -1,14 +1,10 @@
 import type { FCClass } from '@/shared/types';
-import './button-play.scss';
+import styles from './button-play.module.scss';
+import cx from 'classix';
 
 type TButtonPlay = {
-  onClick?: () => void
-}
-
-const parentClass = "idmrp-button-play" as const;
-const classes = {
-  parent: parentClass
-} as const;
+  onClick?: () => void;
+};
 
 export const ButtonPlay: FCClass<TButtonPlay> = ({
   className,
@@ -16,9 +12,12 @@ export const ButtonPlay: FCClass<TButtonPlay> = ({
 }) => {
   return (
     <button
-      className={[classes.parent, className].join(' ')}
-      type='button'
+      className={cx(
+        styles.button,
+        className,
+      )}
+      type="button"
       onClick={onClick}
     />
-  )
-}
+  );
+};

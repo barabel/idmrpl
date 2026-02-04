@@ -1,8 +1,8 @@
 export type TPlayerState = {
-  showButton: boolean
-  showPreview: boolean
-  canplay: boolean
-}
+  showButton: boolean;
+  showPreview: boolean;
+  canplay: boolean;
+};
 
 export const PLAYER_ACTIONS = {
   show: 'show',
@@ -15,5 +15,5 @@ export const PLAYER_ACTIONS = {
 export type TPlayerActionsTypes = keyof typeof PLAYER_ACTIONS;
 
 export type TPlayerAction = {
-  type: TPlayerActionsTypes
-}
+  type: TPlayerActionsTypes;
+};
