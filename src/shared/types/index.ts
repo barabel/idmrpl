@@ -25,7 +25,7 @@ export type TPlayerBase = {
 };
 
 type TComp = {
-  component: FCClass;
+  component: any;
   props?: Record<string, any>;
 };
 

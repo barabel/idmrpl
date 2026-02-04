@@ -41,7 +41,7 @@ export const PlayerRutube: FCClass<TPlayerBase> = ({
     return () => {
       window.removeEventListener('message', rutubeReady);
     };
-  }, [dispatch]);
+  }, []);
 
   return (
     <iframe
