@@ -23,15 +23,23 @@ preview: {
 В плеер можно кастомизировать изображение и кнопку, которые будут показываться, если есть превью.
 
 ```ts
-const components={
-  button,
-  previewPicture
+components={
+  button: {
+    /** компонент */
+    component: FCClass;
+    /** его пропсы */
+    props?: Record<string, any>;
+  },
+  previewPicture: {
+    component: FCClass;
+    props?: Record<string, any>;
+  },
 }
 ```
 
 ```tsx
-const PlayButton = () => (
-  <button>▶ Play</button>
+const PlayButton = (props) => (
+  <button {...props}>▶ Play</button>
 );
 
 const PreviewImage = () => (
@@ -41,8 +49,15 @@ const PreviewImage = () => (
 <Player
   url={url}
   components={{
-    button: () => PlayButton,
-    previewPicture: () => PreviewImage,
+    button: {
+      component: PlayButton,
+      props: {
+        type: "button"
+      }
+    },
+    previewPicture: {
+      component: PreviewImage,
+    },
   }}
 />
 ```
