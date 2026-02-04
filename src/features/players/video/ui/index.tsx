@@ -1,4 +1,5 @@
-import { PLAYER_ACTIONS, usePlayerDispatch } from '@/shared/context';
+import { usePlayerDispatch } from '@/shared/context/hooks';
+import { PLAYER_ACTIONS } from '@/shared/context/types';
 import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useImperativeHandle, useRef } from 'react';
 

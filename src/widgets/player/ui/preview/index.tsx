@@ -1,8 +1,9 @@
-import { PLAYER_ACTIONS, usePlayerDispatch, usePlayerState } from '@/shared/context';
+import cx from 'classix';
 import { ButtonPlay } from '@/shared/ui/button-play';
 import type { FCClass, TPlayerPreview } from '@/shared/types';
+import { usePlayerDispatch, usePlayerState } from '@/shared/context/hooks';
+import { PLAYER_ACTIONS } from '@/shared/context/types';
 import styles from './player-preview.module.scss';
-import cx from 'classix';
 
 export const PlayerPreview: FCClass<TPlayerPreview> = ({
   className,

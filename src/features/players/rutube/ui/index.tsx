@@ -1,4 +1,4 @@
-import { usePlayerDispatch } from '@/shared/context';
+import { usePlayerDispatch } from '@/shared/context/hooks';
 import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useEffect, useImperativeHandle, useRef } from 'react';
 
