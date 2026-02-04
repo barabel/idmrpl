@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { ReactNode, RefObject } from 'react';
 
 /** Утилитарный дженерик для обозначения функционального компонента с пропсами children и className */
 export type FCClass<P = object> = React.FC<P & React.PropsWithChildren & { className?: string }>;
@@ -10,8 +10,8 @@ export type TPlayerPreview = {
     /** Альт изображения */
     alt: string;
   };
-  PreviewPictureComponent?: FCClass<Record<string, any>>;
-  ButtonComponent?: FCClass<Record<string, any>>;
+  renderPreviewPicture?: () => ReactNode;
+  renderButton?: () => ReactNode;
   onPlay?: () => void;
 };
 
@@ -28,12 +28,12 @@ type TMapComponents = {
   /** изображение превью */
   previewPicture: {
     /** компонент изображения */
-    component: FCClass;
+    component: () => ReactNode;
   };
   /** кнопка, которая отображаентся, когда видео загрузилось */
   button: {
     /** компонент кнопки */
-    component: FCClass;
+    component: () => ReactNode;
   };
   /** Плеер */
   player: {
@@ -43,7 +43,7 @@ type TMapComponents = {
 };
 
 type KeysWithComponent = {
-  [K in keyof TMapComponents]: TMapComponents[K] extends { component: FCClass } ? K : never
+  [K in keyof TMapComponents]: TMapComponents[K] extends { component: () => ReactNode } ? K : never
 }[keyof TMapComponents];
 
 type TComponents = {

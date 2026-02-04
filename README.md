@@ -41,8 +41,8 @@ const PreviewImage = () => (
 <Player
   url={url}
   components={{
-    button: PlayButton,
-    previewPicture: PreviewImage,
+    button: () => PlayButton,
+    previewPicture: () => PreviewImage,
   }}
 />
 ```
