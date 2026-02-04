@@ -32,8 +32,8 @@ const PlayerBody: FCClass<TPlayer> = ({
   components,
 }) => {
   const playerClassName = classNames?.player;
-  const ButtonComponent = components?.button;
-  const PreviewPictureComponent = components?.previewPicture;
+  const renderButton = components?.button;
+  const renderPreviewPicture = components?.previewPicture;
 
   const Player = useMemo(() => {
     const playerType = getVideoTypeByURL(url);
@@ -49,7 +49,7 @@ const PlayerBody: FCClass<TPlayer> = ({
     }
   };
 
-  const hasPreview = Boolean(preview) || Boolean(PreviewPictureComponent);
+  const hasPreview = Boolean(preview) || Boolean(renderPreviewPicture);
 
   return (
     <Preview
@@ -57,8 +57,8 @@ const PlayerBody: FCClass<TPlayer> = ({
       className={className}
       preview={preview}
       onPlay={handleOnPlay}
-      ButtonComponent={ButtonComponent}
-      PreviewPictureComponent={PreviewPictureComponent}
+      renderButton={renderButton}
+      renderPreviewPicture={renderPreviewPicture}
     >
       <Player
         className={cx(

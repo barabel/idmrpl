@@ -1,6 +1,6 @@
 {
   "name": "@barabel324/react-player",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "main": "./dist/react-player.js",
   "types": "./dist/react-player.d.ts",

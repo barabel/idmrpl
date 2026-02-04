@@ -9,8 +9,8 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
   preview,
   onPlay,
   children,
-  ButtonComponent,
-  PreviewPictureComponent,
+  renderButton,
+  renderPreviewPicture,
 }) => {
   const { showButton, showPreview, canplay } = usePlayerState();
   const dispatch = usePlayerDispatch();
@@ -27,7 +27,7 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
     }
   };
 
-  const hasPreview = Boolean(preview) || Boolean(PreviewPictureComponent);
+  const hasPreview = Boolean(preview) || Boolean(renderPreviewPicture);
 
   return (
     <div
@@ -43,8 +43,8 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
         >
           {showButton
             && (
-              ButtonComponent
-                ? <ButtonComponent />
+              renderButton
+                ? renderButton()
                 : (
                     <ButtonPlay
                       className={styles.playerPreview__button}
@@ -53,10 +53,8 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
             )}
 
           {(hasPreview && showPreview) && (
-            PreviewPictureComponent
-              ? (
-                  <PreviewPictureComponent />
-                )
+            renderPreviewPicture
+              ? renderPreviewPicture()
               : preview && <img className={styles.playerPreview__preview} src={preview.src} alt={preview.alt ?? 'preview'} />
           )}
         </div>
