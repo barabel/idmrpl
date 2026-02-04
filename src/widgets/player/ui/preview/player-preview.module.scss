@@ -1,20 +1,16 @@
-@use '~/src/assets/styles/lib/index.scss' as *;
-
-$parent: 'idmrp-player-preview';
-
-@include block($parent) {
+.playerPreview {
   position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
 
-  @include element($parent, 'wrapper') {
+  &__wrapper {
     position: absolute;
     inset: 0;
     cursor: pointer;
   }
 
-  @include element($parent, 'button') {
+  &__button {
     z-index: 2;
     position: absolute;
     top: 50%;
@@ -22,7 +18,7 @@ $parent: 'idmrp-player-preview';
     transform: translateX(-50%) translateY(-50%);
   }
 
-  @include element($parent, 'preview') {
+  &__preview {
     z-index: 1;
     position: absolute;
     top: 0;
@@ -32,7 +28,7 @@ $parent: 'idmrp-player-preview';
     object-fit: cover;
   }
 
-  @include element($parent, 'player') {
+  &__player {
     width: 100%;
     height: 100%;
   }

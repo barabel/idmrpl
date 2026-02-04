@@ -1,4 +1,4 @@
-import type { FCClass, TPlayerBase } from '@/shared/types'
+import type { FCClass, TPlayerBase } from '@/shared/types';
 import { useEffect, useImperativeHandle, useRef } from 'react';
 import { loadYTApi, parseYtId } from '../lib';
 import { usePlayerDispatch } from '@/shared/context';
@@ -19,18 +19,18 @@ export const PlayerYoutube: FCClass<TPlayerBase> = ({
     dispatch({
       type: 'canplay',
     });
-  }
+  };
 
   const play = () => {
     if (refYoutubeInst.current?.playVideo) {
       refYoutubeInst.current.playVideo();
     }
-  }
+  };
 
   useImperativeHandle(ref, () => {
     return {
       play,
-    }
+    };
   });
 
   useEffect(() => {
@@ -52,5 +52,5 @@ export const PlayerYoutube: FCClass<TPlayerBase> = ({
     });
   }, []);
 
-  return <div className={className} ref={refContainer} />
-}
+  return <div className={className} ref={refContainer} />;
+};

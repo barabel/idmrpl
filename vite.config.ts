@@ -1,10 +1,10 @@
 import path from 'node:path';
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath } from 'node:url';
 import { defineConfig, type LibraryFormats } from 'vite';
 import react from '@vitejs/plugin-react';
-import dts from 'unplugin-dts/vite'
+import dts from 'unplugin-dts/vite';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => {
   return {
@@ -23,7 +23,7 @@ export default defineConfig(() => {
         formats: ['es'] as LibraryFormats[],
       },
       rollupOptions: {
-        external: ['react', 'react-dom', 'react/jsx-runtime', 'classix']
+        external: id => /^(react|react-dom|react\/jsx-runtime)(\/.*)?$/.test(id),
       },
     },
     css: {
@@ -40,5 +40,5 @@ export default defineConfig(() => {
         '@': path.resolve(process.cwd(), 'src'),
       },
     },
-  }
+  };
 });

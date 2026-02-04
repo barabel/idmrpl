@@ -6,20 +6,21 @@ export const parseYtId = (url: string): string => {
   const match = url.match(regExp);
 
   return (match && match[7].length === 11) ? match[7] : '';
-}
+};
 
 /**
  * Функция loadYTApi загружает скрипты youtube, если они не были загружены при вызове
  */
-export const loadYTApi = async(): Promise<any> => {
+export const loadYTApi = async (): Promise<any> => {
   return await new Promise((resolve) => {
     if (window.YT) {
       resolve(window.YT);
-    } else {
+    }
+    else {
       const youtubeUrl = 'https://www.youtube.com/iframe_api';
 
       const scriptArray = Array.from(document.querySelectorAll<HTMLScriptElement>('script'));
-      const ytScript = scriptArray.find((script) => script.src === youtubeUrl) ?? document.createElement('script');
+      const ytScript = scriptArray.find(script => script.src === youtubeUrl) ?? document.createElement('script');
 
       if (ytScript.src) {
         const idInterval = setInterval(() => {
@@ -32,7 +33,8 @@ export const loadYTApi = async(): Promise<any> => {
         setTimeout(() => {
           clearInterval(idInterval);
         }, 60000);
-      } else {
+      }
+      else {
         ytScript.src = youtubeUrl;
 
         const firstScriptTag = document.getElementsByTagName('script')[0];

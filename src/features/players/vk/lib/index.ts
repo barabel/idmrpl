@@ -8,7 +8,7 @@ export const loadVKVideoApi = async (): Promise<any> => {
 
     const vkScriptUrl = 'https://vk.com/js/api/videoplayer.js';
     const existingScript = Array.from(document.scripts).find(
-      (script) => script.src === vkScriptUrl,
+      script => script.src === vkScriptUrl,
     );
 
     // Если скрипт уже добавлен, но API еще не доступно
@@ -39,7 +39,8 @@ export const loadVKVideoApi = async (): Promise<any> => {
       const checkReady = () => {
         if (window.VK?.VideoPlayer) {
           resolve(window.VK);
-        } else {
+        }
+        else {
           setTimeout(checkReady, 300);
         }
       };
@@ -69,4 +70,4 @@ export const convertVkVideoLink = (url: string): string => {
   const id = match[2];
 
   return `https://vkvideo.ru/video_ext.php?oid=${oid}&id=${id}`;
-}
+};

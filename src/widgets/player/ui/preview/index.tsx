@@ -1,22 +1,16 @@
 import { PLAYER_ACTIONS, usePlayerDispatch, usePlayerState } from '@/shared/context';
 import { ButtonPlay } from '@/shared/ui/button-play';
 import type { FCClass, TPlayerPreview } from '@/shared/types';
-import "./player-preview.scss";
-
-const parentClass = 'idmrp-player-preview' as const;
-const classes = {
-  parent: parentClass,
-  wrapper: `${parentClass}__wrapper`,
-  button: `${parentClass}__button`,
-  preview: `${parentClass}__preview`,
-  player: `${parentClass}__player`,
-} as const
+import styles from './player-preview.module.scss';
+import cx from 'classix';
 
 export const PlayerPreview: FCClass<TPlayerPreview> = ({
   className,
   preview,
   onPlay,
   children,
+  ButtonComponent,
+  PreviewPictureComponent,
 }) => {
   const { showButton, showPreview, canplay } = usePlayerState();
   const dispatch = usePlayerDispatch();
@@ -31,28 +25,46 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
         onPlay();
       }
     }
-  }
+  };
+
+  const hasPreview = Boolean(preview) || Boolean(PreviewPictureComponent);
 
   return (
-    <div className={[classes.parent, className].join(' ')}>
+    <div
+      className={cx(
+        styles.playerPreview,
+        className,
+      )}
+    >
       {(showButton || (preview && showPreview)) && (
         <div
-          className={classes.wrapper}
+          className={styles.playerPreview__wrapper}
           onClick={handleClick}
         >
-          {showButton &&
-            <ButtonPlay
-              className={classes.button}
-            />
-          }
+          {showButton
+            && (
+              ButtonComponent
+                ? <ButtonComponent />
+                : (
+                    <ButtonPlay
+                      className={styles.playerPreview__button}
+                    />
+                  )
+            )}
 
-          {preview && showPreview && <img className={classes.preview} src={preview.src} alt={preview.alt ?? 'preview'} />}
+          {(hasPreview && showPreview) && (
+            PreviewPictureComponent
+              ? (
+                  <PreviewPictureComponent />
+                )
+              : preview && <img className={styles.playerPreview__preview} src={preview.src} alt={preview.alt ?? 'preview'} />
+          )}
         </div>
       )}
 
-      <div className={classes.player}>
+      <div className={styles.playerPreview__player}>
         {children}
       </div>
     </div>
-  )
-}
+  );
+};

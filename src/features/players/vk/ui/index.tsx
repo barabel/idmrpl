@@ -22,7 +22,7 @@ export const PlayerVk: FCClass<TPlayerBase> = ({
   useImperativeHandle(ref, () => {
     return {
       play,
-    }
+    };
   });
 
   useEffect(() => {
@@ -45,21 +45,21 @@ export const PlayerVk: FCClass<TPlayerBase> = ({
     }
 
     return undefined;
-  }, []);
+  }, [dispatch]);
 
   return (
     <iframe
       className={className}
-      width='100%'
-      height='100%'
+      width="100%"
+      height="100%"
       ref={iframeRef}
       src={`${convertVkVideoLink(url)}&js_api=1`}
-      allow='autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media'
-      data-testid='embed-iframe'
-      frameBorder='0'
-      scrolling='no'
-      title='player'
+      allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media"
+      data-testid="embed-iframe"
+      frameBorder="0"
+      scrolling="no"
+      title="player"
       allowFullScreen
     />
-  )
-}
+  );
+};

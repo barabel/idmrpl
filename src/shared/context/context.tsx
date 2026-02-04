@@ -1,3 +1,6 @@
+/* eslint-disable react-refresh/only-export-components */
+// TODO: решить эту проблему
+
 import { createContext, useContext, useReducer, type ActionDispatch } from 'react';
 import { PLAYER_ACTIONS, type TPlayerAction, type TPlayerState } from './types';
 import type { FCClass } from '../types';
@@ -6,10 +9,10 @@ const initialState = {
   showButton: false,
   showPreview: true,
   canplay: false,
-}
+};
 
 const reducer = (state: TPlayerState, action: TPlayerAction) => {
-  const { type }  = action;
+  const { type } = action;
 
   switch (type) {
     case PLAYER_ACTIONS.show:
@@ -25,7 +28,7 @@ const reducer = (state: TPlayerState, action: TPlayerAction) => {
     default:
       return state;
   }
-}
+};
 
 const PlayerContext = createContext<TPlayerState>(initialState);
 const PlayerDispatchContext = createContext<ActionDispatch<[action: TPlayerAction]>>(() => {});
@@ -39,8 +42,8 @@ export const PlayerProvider: FCClass = ({ children }) => {
         {children}
       </PlayerDispatchContext.Provider>
     </PlayerContext.Provider>
-  )
-}
+  );
+};
 
 export const usePlayerState = () => {
   const context = useContext(PlayerContext);
@@ -49,7 +52,7 @@ export const usePlayerState = () => {
   }
 
   return context;
-}
+};
 
 export const usePlayerDispatch = () => {
   const context = useContext(PlayerDispatchContext);
@@ -59,4 +62,4 @@ export const usePlayerDispatch = () => {
   }
 
   return context;
-}
+};
