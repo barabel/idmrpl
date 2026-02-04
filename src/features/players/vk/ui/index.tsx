@@ -45,7 +45,7 @@ export const PlayerVk: FCClass<TPlayerBase> = ({
     }
 
     return undefined;
-  }, [dispatch]);
+  }, []);
 
   return (
     <iframe

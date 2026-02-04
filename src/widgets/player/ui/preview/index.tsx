@@ -36,15 +36,18 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
         className,
       )}
     >
-      {(showButton || (preview && showPreview)) && (
+      {(showButton || (hasPreview && showPreview)) && (
         <div
-          className={styles.playerPreview__wrapper}
+          className={cx(
+            styles.playerPreview__wrapper,
+            showButton && styles.playerPreview__wrapper_cursor,
+          )}
           onClick={handleClick}
         >
           {showButton
             && (
               buttonComponent
-                ? <buttonComponent.component {...buttonComponent.props} />
+                ? <buttonComponent.component className={styles.playerPreview__button} {...buttonComponent.props} />
                 : (
                     <ButtonPlay
                       className={styles.playerPreview__button}
@@ -54,7 +57,7 @@ export const PlayerPreview: FCClass<TPlayerPreview> = ({
 
           {(hasPreview && showPreview) && (
             previewPictureComponent
-              ? <previewPictureComponent.component {...previewPictureComponent.props} />
+              ? <previewPictureComponent.component className={styles.playerPreview__preview} {...previewPictureComponent.props} />
               : preview && <img className={styles.playerPreview__preview} src={preview.src} alt={preview.alt ?? 'preview'} />
           )}
         </div>

@@ -7,7 +7,10 @@
   &__wrapper {
     position: absolute;
     inset: 0;
-    cursor: pointer;
+
+    &_cursor {
+      cursor: pointer;
+    }
   }
 
   &__button {
