@@ -10,8 +10,8 @@ export type TPlayerPreview = {
     /** Альт изображения */
     alt: string;
   };
-  renderPreviewPicture?: () => ReactNode;
-  renderButton?: () => ReactNode;
+  previewPictureComponent?: TComp;
+  buttonComponent?: TComp;
   onPlay?: () => void;
 };
 
@@ -24,16 +24,21 @@ export type TPlayerBase = {
   url: string;
 };
 
+type TComp = {
+  component: FCClass;
+  props?: Record<string, any>;
+};
+
 type TMapComponents = {
   /** изображение превью */
   previewPicture: {
     /** компонент изображения */
-    component: () => ReactNode;
+    component: TComp;
   };
   /** кнопка, которая отображаентся, когда видео загрузилось */
   button: {
     /** компонент кнопки */
-    component: () => ReactNode;
+    component: TComp;
   };
   /** Плеер */
   player: {
@@ -43,7 +48,7 @@ type TMapComponents = {
 };
 
 type KeysWithComponent = {
-  [K in keyof TMapComponents]: TMapComponents[K] extends { component: () => ReactNode } ? K : never
+  [K in keyof TMapComponents]: TMapComponents[K] extends { component: TComp } ? K : never
 }[keyof TMapComponents];
 
 type TComponents = {
