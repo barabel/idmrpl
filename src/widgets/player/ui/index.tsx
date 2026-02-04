@@ -1,10 +1,10 @@
 import cx from 'classix';
 import { useMemo, useRef } from 'react';
-import { PlayerProvider } from '@/shared/context';
 import type { FCClass, TPlayer, TPlayerBaseMethods, TPlayerPreview } from '@/shared/types';
 import { PlayerPreview } from './preview';
 import { getVideoTypeByURL, players } from '../lib';
 import styles from './player.module.scss';
+import { PlayerProvider } from '@/shared/context/provider';
 
 const Preview: FCClass<TPlayerPreview & { hasPreview: boolean }> = ({
   children,
